@@ -1,0 +1,40 @@
+def partition(tab, a, b):
+
+  pivot = tab[b]
+
+
+  i = a - 1
+
+  for j in range(a, b):
+    if tab[j] <= pivot:
+      i = i + 1
+      (tab[i], tab[j]) = (tab[j], tab[i])
+
+  (tab[i + 1], tab[b]) = (tab[b], tab[i + 1])
+
+  return i + 1
+
+
+def quickSort(tab, a, b):
+  if a < b:
+
+
+    pi = partition(tab, a, b)
+
+    
+    quickSort(tab, a, pi - 1)
+
+    
+    quickSort(tab, pi + 1, b)
+
+
+data = [8, 7, 2, 1, 0, 9, 6]
+print("nieposortowane")
+print(data)
+
+size = len(data)
+
+quickSort(data, 0, size - 1)
+
+print('posortowane:')
+print(data)
