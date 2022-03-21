@@ -1,0 +1,16 @@
+def bubblesort(a):  
+    n=len(a)
+
+    for i in range(n-1):    
+        for j in range(0, n-i-1):
+                if a[j] > a[j+1]:   
+                    a[j],a[j+1]=a[j+1],a[j]
+
+
+a=[25,8,76,3,103,45,9,18,75,322]
+
+bubblesort(a)
+
+print("posegregowane :")
+for i in range(len(a)):
+    print("%d" %a[i],end=" ")
